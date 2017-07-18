@@ -90,4 +90,4 @@ $ cf restart
 
 #### Database drivers
 
-Database drivers for MySQL and Microsoft SQL Server are included in the project.
+Database driver for MySQL is included in the project.

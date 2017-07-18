@@ -7,7 +7,6 @@ import org.springframework.cloud.CloudException;
 import org.springframework.cloud.CloudFactory;
 import org.springframework.cloud.service.ServiceInfo;
 import org.springframework.cloud.service.common.MysqlServiceInfo;
-import org.springframework.cloud.service.common.SqlServerServiceInfo;
 import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.ConfigurableEnvironment;
@@ -26,7 +25,6 @@ public class SpringApplicationContextInitializer implements ApplicationContextIn
 
     static {
         serviceTypeToProfileName.put(MysqlServiceInfo.class, "mysql");
-        serviceTypeToProfileName.put(SqlServerServiceInfo.class, "sqlserver");
     }
 
     @Override
