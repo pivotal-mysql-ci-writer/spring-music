@@ -15,7 +15,12 @@ local.properties
 target/
 
 .gradle
-build/
+
+# Ignore everything in build dir except app jar
+build/*
+!build/libs
+build/libs/*
+!build/libs/spring-music.jar
 
 *.log*
 /classes/
