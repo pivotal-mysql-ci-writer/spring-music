@@ -46,7 +46,6 @@ dependencies {
     compile "commons-dbcp:commons-dbcp"
     runtime "com.h2database:h2"
     runtime "mysql:mysql-connector-java"
-    runtime "org.postgresql:postgresql"
     runtime "com.microsoft.sqlserver:mssql-jdbc"
 
     // Webjars
