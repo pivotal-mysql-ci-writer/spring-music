@@ -29,7 +29,7 @@ If more than one of these profiles is provided, the application will throw an ex
 
 ## Running the application on Cloud Foundry
 
-When running on Cloud Foundry, the application will detect the type of database service bound to the application (if any). If a service of one of the supported types (MySQL or Oracle) is bound to the app, the appropriate Spring profile will be configured to use the database service. The connection strings and credentials needed to use the service will be extracted from the Cloud Foundry environment.
+When running on Cloud Foundry, the application will detect the type of database service bound to the application (if any). If a service of one of the supported types (MySQL) is bound to the app, the appropriate Spring profile will be configured to use the database service. The connection strings and credentials needed to use the service will be extracted from the Cloud Foundry environment.
 
 If no bound services are found containing any of these values in the name, then the `in-memory` profile will be used.
 
@@ -70,8 +70,6 @@ Cloud Foundry also allows service connection information and credentials to be p
 These steps use examples for username, password, host name, and database name that should be replaced with real values.
 
 ~~~
-# create a user-provided Oracle database service instance
-$ cf create-user-provided-service oracle-db -p '{"uri":"oracle://root:secret@dbserver.example.com:1521/mydatabase"}'
 # create a user-provided MySQL database service instance
 $ cf create-user-provided-service mysql-db -p '{"uri":"mysql://root:secret@dbserver.example.com:3306/mydatabase"}'
 # bind a service instance to the application
@@ -92,4 +90,4 @@ $ cf restart
 
 #### Database drivers
 
-Database drivers for MySQL and Microsoft SQL Server are included in the project. To connect to an Oracle database, you will need to download the appropriate driver (e.g. from http://www.oracle.com/technetwork/database/enterprise-edition/jdbc-112010-090769.html?ssSourceSiteId=otnjp), add the driver .jar file to the `src/main/webapp/WEB-INF/lib` directory in the project, and re-build the application .jar file.
+Database drivers for MySQL and Microsoft SQL Server are included in the project.
