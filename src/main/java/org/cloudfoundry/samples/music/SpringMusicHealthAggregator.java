@@ -16,7 +16,7 @@ import static java.util.stream.Collectors.toMap;
 
 /**
  * Health Aggregator class that only considers the persistence provider that is used.
- * For example if H2 is used then it will not aggregate the health of redis
+ * For example if H2 is used then it will not aggregate the health of mysql
  */
 @Component
 public class SpringMusicHealthAggregator implements HealthAggregator   {
@@ -25,14 +25,7 @@ public class SpringMusicHealthAggregator implements HealthAggregator   {
     private final OrderedHealthAggregator orderedHealthAggregator = new OrderedHealthAggregator();
 
     @Autowired
-    public SpringMusicHealthAggregator(Environment environment) {
-
-        if(environment.acceptsProfiles("redis")){
-            excluded.add("db");
-        } else {
-            excluded.add("redis");
-        }
-    }
+    public SpringMusicHealthAggregator(Environment environment) { }
 
     @Override
     public Health aggregate(Map<String, Health> healths){
