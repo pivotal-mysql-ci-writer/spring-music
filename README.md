@@ -1,3 +1,19 @@
+Spring Music for Dedicated MySQL Team
+============
+
+This is a fork of the [spring-music](https://github.com/cloudfoundry-samples/spring-music) sample CF application used as a test app in the [dedicated-mysql-adapter-release](https://github.com/pivotal-cf/dedicated-mysql-adapter-release) bosh release. In the smoke test the app is pushed to CF and bound to a dedicated-mysql instance. The `/appinfo` endpoint is queried to verify the app has beensuccessfully bound to a mysql instance. The test also writes and reads data using the `/albums` endpoint.
+
+The build/libs/spring-music.jar file is committed in this repo so that the app can be pushed without needing java in a test environment. **Rebuild the app using `./gradlew clean assemble` and commit the .jar file whenever changes to the app have been made.**
+
+To push to CF:
+```
+$ cf push spring-music -m 512M -k 256M -p build/libs/spring-music.jar
+```
+
+A `/ping` endpoint has been added to verify the app has been pushed successfully.
+
+---
+
 Spring Music
 ============
 
