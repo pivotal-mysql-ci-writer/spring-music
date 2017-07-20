@@ -28,11 +28,6 @@ public class InfoController {
         return new ApplicationInfo(springEnvironment.getActiveProfiles(), getServiceNames());
     }
 
-    @RequestMapping(value = "/ping")
-    public String ping() {
-        return "OK";
-    }
-
     @RequestMapping(value = "/service")
     public List<ServiceInfo> showServiceInfo() {
         if (cloud != null) {

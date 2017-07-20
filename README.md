@@ -9,9 +9,6 @@ To push to CF:
 ```
 $ cf push spring-music -m 512M -k 256M -p build/libs/spring-music.jar
 ```
-
-A `/ping` endpoint has been added to verify the app has been pushed successfully.
-
 ---
 
 Spring Music
